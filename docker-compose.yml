@@ -1,18 +1,3 @@
-# version: '3.7'
-
-# services:
-
-#   client-app:
-#     container_name: client-app
-#     build:
-#       context: .
-#       dockerfile: ./client-app-ms/Dockerfile
-#     volumes:
-#       - '.:/app'
-#       - '/app/node_modules'
-#     ports:
-#       - '4201:4200'
-
 version: '3.5'
 services:
     client-app:
@@ -21,4 +6,39 @@ services:
         context: client-app-ms
         dockerfile: Dockerfile
       ports: 
-        - '8080:80' 
+        - '8080:80'
+
+    order-app-api:
+      container_name: order-app-ms
+      build:
+        context: order-application-ms
+        dockerfile: Dockerfile
+      volumes:
+        - .:/app
+      ports:
+        - "3000:3000"
+      depends_on:
+        - mongo
+
+    payment-api:
+      container_name: payment-app-ms
+      build:
+        context: payment-application-ms
+        dockerfile: Dockerfile
+      volumes:
+        - .:/app
+      ports:
+        - "4000:4000"
+      depends_on:
+        - mongo
+
+    mongo:
+      container_name: mongodb
+      image: mongo
+      ports:
+      - "27017:27017"
+      volumes:
+        - data-volume:/data/db
+
+volumes:
+  data-volume:

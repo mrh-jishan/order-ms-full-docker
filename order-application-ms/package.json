@@ -11,15 +11,9 @@
     "yarn": "*"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production pm2 start ./src/index.js",
+    "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js",
-    "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
-    "lint:fix": "yarn lint --fix",
-    "lint:watch": "yarn lint --watch",
-    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 20000 --recursive src/api/tests",
-    "deploy": "sh ./deploy.sh",
-    "docker:start": "cross-env NODE_ENV=production pm2-docker start ./src/index.js",
-    "docker:run": "docker-compose -f docker-compose.yml -f docker-compose.yml up"
+    "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts"
   },
   "repository": {
     "type": "git",

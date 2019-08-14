@@ -1,0 +1,4 @@
+{"message":"server started on port 4000 (development)","level":"info"}
+{"message":"MongoDB connection error: MongoNetworkError: failed to connect to server [mongodb:27017] on first connect [Error: getaddrinfo ENOTFOUND mongodb\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26) {\n  name: 'MongoNetworkError',\n  errorLabels: [Array],\n  [Symbol(mongoErrorContextSymbol)]: {}\n}]","level":"error"}
+{"message":"server started on port 4000 (development)","level":"info"}
+{"message":"MongoDB connection error: MongoNetworkError: failed to connect to server [mongodb:27017] on first connect [Error: getaddrinfo ENOTFOUND mongodb\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26) {\n  name: 'MongoNetworkError',\n  errorLabels: [Array],\n  [Symbol(mongoErrorContextSymbol)]: {}\n}]","level":"error"}
