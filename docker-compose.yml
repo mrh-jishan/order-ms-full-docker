@@ -1,0 +1,24 @@
+# version: '3.7'
+
+# services:
+
+#   client-app:
+#     container_name: client-app
+#     build:
+#       context: .
+#       dockerfile: ./client-app-ms/Dockerfile
+#     volumes:
+#       - '.:/app'
+#       - '/app/node_modules'
+#     ports:
+#       - '4201:4200'
+
+version: '3.5'
+services:
+    client-app:
+      container_name: client-app-ms
+      build:
+        context: client-app-ms
+        dockerfile: Dockerfile
+      ports: 
+        - '8080:80' 

@@ -1,0 +1,17 @@
+version: "2"
+services:
+  payment-api:
+    build: .
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/payment-app
+    volumes:
+      - .:/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"

@@ -1,0 +1,34 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Product name</th>
+    <th scope="col">Category</th>
+    <th scope="col">Price</th>
+    <th scope="col">Status</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of orders$ | async">
+    <th scope="row">{{item.id}}</th>
+    <td>{{item.product.name}}</td>
+    <td>{{item.product.category}}</td>
+    <td>{{item.product.price}}</td>
+    <td>{{item.status}}</td>
+    <td *ngIf="item.status==='created'">
+      <button class="btn btn-primary btn-sm" (click)="cancelOrder(item)">Cancel</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<!--category: "electronics"-->
+<!--createdAt: "2019-08-04T12:41:33.735Z"-->
+<!--description: "test decription"-->
+<!--name: "testproduct"-->
+<!--picture: "https://cdn01.alison-static.net/courses/531/alison_courseware_intro_531.jpg"-->
+<!--price: 40.4-->
+<!--updatedAt: "2019-08-04T12:41:33.735Z"-->
+<!--__v: 0-->
