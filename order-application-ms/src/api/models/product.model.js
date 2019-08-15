@@ -19,7 +19,6 @@ const productSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    maxlength: 128,
     index: true,
     trim: true
   },
@@ -30,8 +29,7 @@ const productSchema = new mongoose.Schema({
   description: {
     type: String,
     trim: true,
-    minlength: 6,
-    maxlength: 128
+    minlength: 6
   }
 }, {
   timestamps: true

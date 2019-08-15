@@ -28,6 +28,7 @@ exports.get = (req, res) => res.json(req.locals.product.transform());
  * @public
  */
 exports.create = async (req, res, next) => {
+  console.log(req.body)
   try {
     const product = new Product(req.body);
     const savedOrder = await product.save();

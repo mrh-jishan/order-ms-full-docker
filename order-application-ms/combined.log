@@ -1,0 +1,8 @@
+{"message":"server started on port 5000 (development)","level":"info"}
+{"message":"MongoDB connection error: MongoNetworkError: failed to connect to server [mongodb:27017] on first connect [MongoNetworkError: getaddrinfo ENOTFOUND mongodb mongodb:27017]","level":"error"}
+{"message":"server started on port 5000 (development)","level":"info"}
+{"message":"server started on port 5000 (development)","level":"info"}
+{"message":"server started on port 5000 (development)","level":"info"}
+{"message":"server started on port 6000 (development)","level":"info"}
+{"message":"server started on port 6000 (development)","level":"info"}
+{"message":"server started on port 6000 (development)","level":"info"}

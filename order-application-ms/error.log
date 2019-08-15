@@ -1,0 +1,2 @@
+{"message":"MongoDB connection error: MongoNetworkError: failed to connect to server [mongodb:27017] on first connect [MongoNetworkError: getaddrinfo ENOTFOUND mongodb mongodb:27017]","level":"error"}
+{"message":"MongoDB connection error: MongoNetworkError: failed to connect to server [mongodb:27017] on first connect [MongoNetworkError: getaddrinfo ENOTFOUND mongodb mongodb:27017]","level":"error"}

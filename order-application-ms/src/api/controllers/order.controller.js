@@ -9,7 +9,7 @@ const APIError = require('../utils/APIError');
 exports.load = async (req, res, next, id) => {
   try {
     const order = await Order.get(id);
-    req.locals = {order};
+    req.locals = { order };
     return next();
   } catch (error) {
     return next(error);
@@ -28,6 +28,8 @@ exports.get = (req, res) => res.json(req.locals.order.transform());
  * @public
  */
 exports.create = async (req, res, next) => {
+
+  console.log(req.body)
   try {
     const order = new Order(req.body);
     const savedOrder = await order.save();
@@ -68,7 +70,7 @@ const createPayout = async (req, order) => new Promise((resolve, reject) => {
  * @public
  */
 exports.cancelOrder = (req, res, next) => {
-  const {order} = req.locals;
+  const { order } = req.locals;
   if (order.status === 'created') {
     order.status = 'canceled';
     order.save()
@@ -101,7 +103,7 @@ exports.list = async (req, res, next) => {
  * @public
  */
 exports.remove = (req, res, next) => {
-  const {order} = req.locals;
+  const { order } = req.locals;
 
   order.remove()
     .then(() => res.status(httpStatus.NO_CONTENT).end())
