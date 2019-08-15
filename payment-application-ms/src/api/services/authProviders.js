@@ -36,13 +36,15 @@ exports.google = async (access_token) => {
 
 
 exports.payment = async (accessToken, body) => {
-  const paymentHost = process.env.PAYMENT_URI || 'localhost:4000';
-  const url = `${paymentHost}/v1/payment`;
+  const paymentHost = process.env.PAYMENT_URI || '0.0.0.0:4000';
+  const url = `http://${paymentHost}/v1/payment`;
 
   const headers = {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${accessToken}`
   }
+
+  console.log(url)
 
   const response = await axios.get(url, body, {
     headers
